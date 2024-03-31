@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productive YT</title>
+  </head>
+  <style>
+    iframe {
+      filter: grayscale(100%);
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+  <body>
+    <div id="videoContainer"></div>
+
+    <script>
+      const videoLinks = [
+        "https://www.youtube.com/watch?v=hSbHTT7UKvA",
+        "https://www.youtube.com/watch?v=MjKYJjCqUv4",
+        "https://www.youtube.com/watch?v=V_fYfdXpkx4",
+        "https://www.youtube.com/watch?v=y6NfxiemvHg",
+        "https://www.youtube.com/watch?v=w6qRb171cog",
+        "https://www.youtube.com/watch?v=PI6QcwnfNe8",
+        "https://www.youtube.com/watch?v=atMrnp_EVcI",
+        "https://www.youtube.com/watch?v=u3qIWN-ZIPk",
+        "https://www.youtube.com/watch?v=NSEdnld6i9A",
+        "https://www.youtube.com/watch?v=nFB-AILkamw",
+        "https://www.youtube.com/watch?v=9PxxtJVWRrg",
+        "https://www.youtube.com/watch?v=akO8qAx4xjY",
+        "https://www.youtube.com/watch?v=xU_rLZqlca4",
+        "https://www.youtube.com/watch?v=ugTUtpkhBDw",
+        "https://www.youtube.com/watch?v=HIzlvDHem0A",
+        "https://www.youtube.com/watch?v=wYUTMgGxZzc",
+        "https://www.youtube.com/watch?v=GnK9tw5mkpk",
+        "https://www.youtube.com/watch?v=5iLbbuEecJU",
+        "https://www.youtube.com/watch?v=Ng7LIRDhwwg",
+        "https://www.youtube.com/watch?v=Wq16lyNpmYs",
+        "https://www.youtube.com/watch?v=_eqMKstqfa4",
+        "https://www.youtube.com/watch?v=npBC3R-dOr0",
+        "https://www.youtube.com/watch?v=APvj15_YCqk",
+        "https://www.youtube.com/watch?v=k9xXpsoRG18",
+        "https://www.youtube.com/watch?v=kbKGlAJsPIE",
+        "https://www.youtube.com/watch?v=EixhVBV2yzo",
+        "https://www.youtube.com/watch?v=2KjW4BqNFy0",
+        "https://www.youtube.com/watch?v=XyIqmNqZHnA",
+        "https://www.youtube.com/watch?v=hMSiaUCJkmc",
+        "https://www.youtube.com/watch?v=eg1jF6YE8L8",
+        "https://www.youtube.com/watch?v=Ltq0mk0Hwj0",
+        "https://www.youtube.com/watch?v=qRsvSz7u_d4",
+        "https://www.youtube.com/watch?v=UX-TdHm4E8s",
+        "https://www.youtube.com/watch?v=j7kTpTrET98",
+        "https://www.youtube.com/watch?v=IqB6keOlxNo",
+      ];
+
+      function embedVideos(videoLinks) {
+        const container = document.getElementById("videoContainer");
+        videoLinks.forEach((link) => {
+          const videoId = link.split("v=")[1].split("&")[0]; // Extract the video ID from the URL
+          const iframe = document.createElement("iframe");
+          iframe.setAttribute(
+            "src",
+            `https://www.youtube.com/embed/${videoId}`
+          );
+          iframe.setAttribute("frameborder", "0");
+          iframe.setAttribute("allowfullscreen", "true");
+          container.appendChild(iframe);
+        });
+      }
+
+      // Wait for the DOM to fully load before running the function
+      document.addEventListener("DOMContentLoaded", function () {
+        embedVideos(videoLinks);
+      });
+    </script>
+  </body>
+</html>
